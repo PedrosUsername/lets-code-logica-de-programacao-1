@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./question-5.js"></script>
+    <script src="./question-5.js" defer></script>
     <title>Questão 5</title>
 </head>
-<body>
-    
+<body onload="start()" style="margin: 0px;">
+    <main style="height: 100vh; width: 70%; margin: 0px auto; background-color: rgb(255, 235, 206);">
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <h1 style="margin-top: 0px;">Maior/Menor que 10</h1>
+            <br>
+            <label for="valorA">Valor A:</label><br>
+            <input onchange="actionEx1()" type="number" id="valorA" name="valorA" value="1" min="1">
+            <br>
+            <br>
+            <label for="valorB">Valor B:</label><br>
+            <input type="number" id="valorB" name="valorB" value="10" disabled>
+            <br>
+            <br>
+            
+        </div>
+
+        <hr>
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <p>Resposta: VALOR A <span class="ans">NÃO</span> É MAIOR QUE 10! </p>
+        </div>
+    </main>
 </body>
 </html>
