@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./question-2.js"></script>
+    <script src="./question-2.js" defer></script>
     <title>Questão 2</title>
 </head>
-<body>
-    
+<body onload="start()" style="margin: 0px;">
+    <main style="height: 100vh; width: 70%; margin: 0px auto; background-color: rgb(206, 206, 255);">
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <h1 style="margin-top: 0px;">Reajuste de Salário</h1>
+            <br>
+            <label for="salario">Salario: (R$)</label><br>
+            <input onchange="actionEx1()" type="number" id="salario" name="salario" value="1" min="1">
+            <br>
+            <br>
+            <label for="reajuste">Reajuste: (%)</label><br>
+            <input onchange="actionEx1()" type="number" id="reajuste" name="reajuste" value="1" min="1">
+            <br>
+            <br>
+            
+        </div>
+
+        <hr>
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <p>Novo salário = [Salario Atual] + [Salario Atual] * [Reajuste]/100</p>
+            <p>Resposta: <span class="ans">1</span> </p>
+        </div>
+    </main>
 </body>
 </html>
