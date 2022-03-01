@@ -5,3 +5,15 @@
  * 
  * Obs: Utilize a interface html para receber os dados do usuário
  */
+const pDistribuidor = 28;
+const impostos = 45;
+let custoFabrica = document.getElementById('custoFabrica');
+let resposta = document.getElementsByTagName('span');
+ 
+function start() {
+    custoFabrica.value = 1;
+}
+
+function actionEx1() {
+    resposta[0].innerHTML = Number(custoFabrica.value) + Number(custoFabrica.value * pDistribuidor/100) + Number(custoFabrica.value * impostos/100);
+}
