@@ -1,5 +1,12 @@
-/**
- * Escreva um algoritmo para ler as dimensões de um retângulo (base e altura), calcular e escrever a área do retângulo.
- * 
- * Obs: Utilize a interface html para receber os dados do usuário
- */
+let ladoA = document.getElementById('ladoA');
+let ladoB = document.getElementById('ladoB');
+let resposta = document.getElementsByTagName('span');
+
+function start() {
+    ladoA.value = 1;
+    ladoB.value = 1;
+}
+
+function actionEx1() {
+    resposta[0].innerHTML = ladoA.value * ladoB.value;
+}

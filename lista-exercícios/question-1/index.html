@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./question-1.js"></script>
+    <script src="./question-1.js" defer></script>
     <title>Questão 1</title>
 </head>
-<body>
-    
+<body onload="start()" style="margin: 0px;">
+    <main style="height: 100vh; width: 70%; margin: 0px auto; background-color: rgb(206, 206, 255);">
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <h1 style="margin-top: 0px;">Área do retângulo</h1>
+            <br>
+            <label for="ladoA">Base:</label><br>
+            <input onchange="actionEx1()" type="number" id="ladoA" name="ladoA" value="1" min="1">
+            <br>
+            <br>
+            <label for="ladoB">Altura:</label><br>
+            <input onchange="actionEx1()" type="number" id="ladoB" name="ladoB" value="1" min="1">
+            <br>
+            <br>
+            
+        </div>
+
+        <hr>
+        <div style="padding-top: 15px; padding-left: 15px;">
+            <p>Resposta: <span class="ans">1</span> </p>
+        </div>
+    </main>
 </body>
 </html>
