@@ -1,38 +1,20 @@
-let b0 = document.getElementById('b0');
-let b1 = document.getElementById('b1');
-let b2 = document.getElementById('b2');
-let b3 = document.getElementById('b3');
-let b4 = document.getElementById('b4');
-let b5 = document.getElementById('b5');
-let b6 = document.getElementById('b6');
-let b7 = document.getElementById('b7');
-let b8 = document.getElementById('b8');
-let b9 = document.getElementById('b9');
-let bpi = document.getElementById('bpi');
-
-let bsen = document.getElementById('bsen');
-let bcon = document.getElementById('bcos');
-let bsqrt = document.getElementById('bsqrt');
-let bplu = document.getElementById('bplu');
-let bdiv = document.getElementById('bdiv');
-let bmul = document.getElementById('bmul');
-let bles = document.getElementById('bles');
-let bpow = document.getElementById('bpow');
-
 let valorA;
 let operador;
 let valorB;
 
 let visor = document.getElementsByTagName('span');
+let historico = document.getElementById('hist');
+
+const vetor = []
 
 function startAction() {
     valorA = null;
-    operador = null;
+    operador = '#';
     valorB = null;
 
-    visor[0].innerHTML = " # ";
+    visor[0].innerHTML = " 0 ";
     visor[1].innerHTML = " # ";
-    visor[2].innerHTML = " # ";
+    visor[2].innerHTML = " 0 ";
     visor[4].innerHTML = " # "
 }
 
@@ -55,32 +37,56 @@ function setOperator(operator) {
 }
 
 function endAction() {
-    switch(operador) {
+
+    const operacao = {
+        a: Number(valorA),
+        b: Number(valorB),
+        operador: operador,
+        resp: 0,
+    }
+    const a = operacao.a;
+    const b = operacao.b;
+    let resp;
+
+    switch(operacao.operador) {
         case '+':
-            visor[4].innerHTML = Number(valorA) + Number(valorB);
+            resp = a + b;
             break;
         case '-':
-            visor[4].innerHTML = Number(valorA) - Number(valorB);
+            resp = a - b;
             break;
         case '/':
-            visor[4].innerHTML = Number(valorA) / Number(valorB);
+            resp = a / b;
             break;            
         case '*':
-            visor[4].innerHTML = Number(valorA) * Number(valorB);
+            resp = a * b;
             break;            
         case '^':
-            visor[4].innerHTML = Number(valorA) ** Number(valorB);
+            resp = a ** b;
             break;            
         case 'Sqrt()':
-            visor[4].innerHTML = Number(valorA) * Math.sqrt( Number(valorB) );
+            resp = a * Math.sqrt(b);
             break;            
         case 'Sen()':
-            visor[4].innerHTML = Number(valorA) * Math.sin(Number(valorB));
+            resp = a * Math.sin(b);
             break;
         case 'Cos()':
-            visor[4].innerHTML = Number(valorA) * Math.cos(Number(valorB));
+            resp = a * Math.cos(b);
             break;
         default:
-            alert('error');
-    } 
+            resp = '#';
+            alert('Por favor especifique um operador');
+    }
+    
+    visor[4].innerHTML = resp;
+    operacao.resp = resp;
+
+    const paragraph = document.createElement("p");
+    const text = document.createTextNode(`${operacao.a} ${operacao.operador ?? '#'} ${operacao.b} = ${operacao.resp} <`);
+    paragraph.appendChild(text);
+    historico.appendChild(paragraph);
+
+    vetor.push(operacao);
+    console.clear();
+    console.log(vetor)
 }

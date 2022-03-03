@@ -12,6 +12,7 @@ aside {
     height: 100vh;
     width: 40%;
     background-color: rgb(206, 206, 255);
+    overflow: auto;
 }
 article {
     width: 95%;
