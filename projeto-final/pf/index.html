@@ -8,44 +8,60 @@
     <title>Projeto Final</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body onload="start()">
+<body onload="startAction()">
+    <aside>
+        <article>
+            <h2 style="margin-top: 0px;">Historico</h2>
+            <div></div>
+        </article>
+    </aside>
     <main>
         <h1 style="margin-top: 0px;">Calculadora</h1>
         <br>
 
-        <div class="calc__visor">
-            <button class="visor">
-                <p>2500</p>
-            </button>
-        </div>
-        <div class="calc__controlls">
-            <button class="calc__btn" id="bsen">sen()</button>
-            <button class="calc__btn" id="bcos">cos()</button>
-            <button class="calc__btn" id="bsqrt">sqrt()</button>
-            <button class="calc__btn" id="bstart">C</button>
-            <button class="calc__btn" id="b7">7</button>
-            <button class="calc__btn" id="b7">8</button>
-            <button class="calc__btn" id="b9">9</button>
-            <button class="calc__btn" id="bdiv">/</button>
-            <button class="calc__btn" id="b4">4</button>
-            <button class="calc__btn" id="b5">5</button>            
-            <button class="calc__btn" id="b6">6</button>
-            <button class="calc__btn" id="bmul">x</button>
-            <button class="calc__btn" id="b1">1</button>
-            <button class="calc__btn" id="b2">2</button>
-            <button class="calc__btn" id="b3">3</button>            
-            <button class="calc__btn" id="bles">-</button>
-            <button class="calc__btn" id="b0">0</button>            
-            <button class="calc__btn" id="bpow">pow()</button>
-            <button class="calc__btn" id="bpi">π</button>
+        <div class="calc__container">
+            <div class="calc__visor">
+                <button class="visor">
+                    <span>2</span>
+                    <span>+</span>                    
+                    <span>3</span>
+                    <span>=</span>                                        
+                    <span>0</span>
+                </button>
+            </div>
+            <div class="calc__controlls">
+                <button class="calc__btn hidden" ></button>
+                <button class="calc__btn hidden" ></button>
+                <button class="calc__btn hidden" ></button>
+                <button onclick="startAction()" class="calc__btn" id="bstart">C</button>
 
-            <button class="calc__btn equals" id="bequ">=</button>
+                <button onclick="setOperator('Sen()')" class="calc__btn" id="bsen">sen()</button>
+                <button onclick="setOperator('Cos()')" class="calc__btn" id="bcos">cos()</button>
+                <button onclick="setOperator('Sqrt()')" class="calc__btn" id="bsqrt">sqrt()</button>
+                <button onclick="setOperator('+')" class="calc__btn" id="bsplu">+</button>
+
+                <button onclick="setValue(7)" class="calc__btn" id="b7">7</button>
+                <button onclick="setValue(8)" class="calc__btn" id="b7">8</button>
+                <button onclick="setValue(9)" class="calc__btn" id="b9">9</button>
+                <button onclick="setOperator('/')" class="calc__btn" id="bdiv">/</button>
+
+                <button onclick="setValue(4)" class="calc__btn" id="b4">4</button>
+                <button onclick="setValue(5)" class="calc__btn" id="b5">5</button>            
+                <button onclick="setValue(6)" class="calc__btn" id="b6">6</button>
+                <button onclick="setOperator('*')" class="calc__btn" id="bmul">x</button>
+
+                <button onclick="setValue(1)" class="calc__btn" id="b1">1</button>
+                <button onclick="setValue(2)" class="calc__btn" id="b2">2</button>
+                <button onclick="setValue(3)" class="calc__btn" id="b3">3</button>            
+                <button onclick="setOperator('-')" class="calc__btn" id="bles">-</button>
+
+                <button onclick="setValue(0)" class="calc__btn" id="b0">0</button>            
+                <button onclick="setOperator('^')" class="calc__btn" id="bpow">pow()</button>
+                <button onclick="setValue('p')" class="calc__btn" id="bpi">π</button>
+                <button onclick="endAction()" class="calc__btn equals" id="bequ">=</button>
+            </div>
         </div>
 
     </main>
-    <aside>
-        <h2 style="margin-top: 0px;">Historico</h2>
-        <div></div>
-    </aside>
 </body>
 </html>
